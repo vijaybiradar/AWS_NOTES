@@ -929,3 +929,64 @@ Note: an IAM principle can access an S3 object if:
 - ClassicLink: connect EC2-Classic instances to VPCs
 - VPN CloudHub: hub-and-spoke VPN model to connect sites
 - Transit Gateway: transitive peering connection for VPC, VPN and DX
+
+
+
+
+VPC
+
+A VPC is like a house. It is a private space where you can create and deploy resources without having to worry about them being accessible to the public internet.
+
+Subnets
+
+Subnets are like rooms in a house. You can create different subnets for different purposes, such as a public subnet for web servers and a private subnet for database servers.
+
+Internet Gateway
+
+The internet gateway is like the front door of a house. It allows traffic to flow between your VPC and the public internet.
+
+NAT Gateway
+
+A NAT gateway is like a bouncer at the front door of a house. It allows resources in a private subnet to access the public internet, but only if they have been granted permission.
+
+Security Groups
+
+Security groups are like locks on the doors to the rooms in a house. You can use security groups to control who is allowed to enter each room.
+
+Network Access Control Lists (NACLs)
+
+Network Access Control Lists (NACLs) are like security cameras at the entrances and exits of a house. They can be used to monitor and control all traffic that enters and leaves the house.
+
+Route Tables
+
+Route tables are like maps of a house. They tell traffic how to get from one room to another, or from a room to the front door.
+
+VPC Endpoints
+
+VPC endpoints are like secret passageways between your house and other houses. They allow you to connect your VPC to other AWS services, such as Amazon S3 and Amazon RDS, without having to expose your resources to the public internet.
+
+NAT Instance
+
+A NAT instance is like a special type of bouncer at the front door of a house. It allows resources in a private subnet to access the public internet, but it also translates their private IP addresses to a public IP address. This means that the resources in the private subnet can be reached from the public internet, but their private IP addresses are hidden from view.
+
+Public Subnet
+
+A public subnet is like a room in a house that has a window to the outside world. Resources in a public subnet are accessible from the public internet.
+
+Private Subnet
+
+A private subnet is like a room in a house that does not have a window to the outside world. Resources in a private subnet are not directly accessible from the public internet.
+
+Bastion Host
+
+A bastion host is like a special type of door that leads from the public subnet to the private subnet. It is typically used to access resources in the private subnet from the public internet.
+
+Here is an example of how you might use these components in a house analogy:
+
+Imagine that you have a house with two rooms: a living room and a bedroom. The living room is like a public subnet, and the bedroom is like a private subnet. You want to be able to access your computer in the bedroom from the public internet, but you don't want to expose it directly to the internet.
+
+You can do this by creating a bastion host in the living room. The bastion host is a server that is hardened and monitored to improve security. You can then use the bastion host to access your computer in the bedroom.
+
+To do this, you would first need to create a security group for the bastion host. This security group would allow traffic from the public internet to the bastion host on port 22 (SSH). You would also need to create a security group for the computer in the bedroom. This security group would allow traffic from the bastion host to the computer on port 22 (SSH).
+
+Once you have created the security groups, you can launch the bastion host and the computer in the bedroom. Once the instances are running, you can use SSH to connect to the bastion host from the public internet. Once you are connected to the bastion host, you can then use SSH to connect to the computer in the bedroom.
